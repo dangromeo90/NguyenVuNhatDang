@@ -1,0 +1,86 @@
+<button type="button" class="btn custom-color mt-3 ml-3" data-toggle="modal" data-target="#addUserModal">
+    Add User
+</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="addUserModal" tabindex="-1" role="dialog" aria-labelledby="addUserModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addUserModalLabel">Add New User</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- Form for adding new product -->
+          <form action="/api/v1/user/add-user" method="post" >
+            <div class="form-group">
+                <label for="productName">Full Name</label>
+                <input type="text" class="form-control custom-input" id="productName" name="name">
+            </div>
+            <div class="form-group">
+                <label for="productName">Phone</label>
+                <input type="text" class="form-control custom-input" id="productName" name="phone">
+            </div>
+            <div class="form-group">
+                <label for="productPrice">Address</label>
+                <input type="text" class="form-control custom-input" id="productPrice" name="address">
+            </div>
+            <div class="form-group">
+                <label for="productPrice">Email</label>
+                <input type="text" class="form-control custom-input" id="productPrice" name="email">
+            </div>
+            <div class="form-group">
+                <label for="productQuantity">Username</label>
+                <input type="text" class="form-control custom-input" id="productQuantity" name="username">
+            </div>
+            <div class="form-group">
+                <label for="productDescription">Password</label>
+                <input type="text" class="form-control custom-input" id="productDescription" name="password">
+            </div>
+            <div class="form-group">
+                <label for="productDescription">Role</label>
+                <input type="text" class="form-control custom-input" id="role" name="role">
+            </div>
+            <!-- <div class="form-group">
+                <label for="productImage">Image</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="productImage" name="thumbnail" accept="image/*">
+                    
+                    <label class="custom-file-label" for="productImage">Choose file</label>
+                </div>
+            </div> -->
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+        
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .custom-color {
+    background-color: #86c200; /* Đặt màu sắc bạn muốn ở đây */
+    color: #fff; /* Màu chữ */
+    /* Các thuộc tính khác nếu cần */
+}
+   .custom-color:hover {
+    background-color:  #86c200; /* Đặt màu sắc bạn muốn ở đây */
+    color: #fff; /* Màu chữ */
+    /* Các thuộc tính khác nếu cần */
+}
+.custom-input{
+    border: solid 1px ;
+    padding: 10px;
+}
+ /* Tùy chỉnh giao diện cho trường tải ảnh */
+ .custom-file-label::after {
+    content: "Browse"; /* Thay đổi nội dung của nút tải ảnh */
+  }
+
+</style>
+<!-- Thư viện Sweet Alert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+

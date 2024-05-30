@@ -1,0 +1,80 @@
+ <!-- Modal update -->
+  <div class="modal fade" id="updateProductModal-<%= product._id %>" tabindex="-1" role="dialog" aria-labelledby="updateProductModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateProductModalLabel">Update Product</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="closeModal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="/api/v1/product/update-product/<%= product._id %>" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="id" value="">
+                    <div class="form-group">
+                        <label for="productName">Product Name</label>
+                        <input type="text" class="form-control custom-input" id="productName" name="name" value="<%= product.name %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="productBrand">Brand</label>
+                        <input type="text" class="form-control custom-input" id="productBrand" name="brand" value="<%= product.brand %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="productOldPrice">Original Price</label>
+                        <input type="text" class="form-control custom-input" id="productOldPrice" name="oldPrice" value="<%= product.oldPrice %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice">Price</label>
+                        <input type="text" class="form-control custom-input" id="productPrice" name="price" value="<%= product.price %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="productStock">Quantity</label>
+                        <input type="text" class="form-control custom-input" id="productStock" name="stock" value="<%= product.stock %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="productDescription">Description</label>
+                        <input type="text" class="form-control custom-input" id="productDescription" name="description" value="<%= product.description %>">
+                    </div>
+                    <div class="form-group">
+                        <label for="productImage">Image</label>
+                        <div class="custom-file">
+                            <input type="file" class="custom-file-input" id="productImage" name="thumbnail" accept="image/*">
+                            <label class="custom-file-label" for="productImage">Choose file</label>
+                        </div>
+                       <br> <img src="/<%= product.thumbnail %>" alt="Product Image" class="mt-2" style="max-width: 100%;">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <style>
+    .custom-color {
+    background-color: #86c200; /* Đặt màu sắc bạn muốn ở đây */
+    color: #fff; /* Màu chữ */
+    /* Các thuộc tính khác nếu cần */
+}
+   .custom-color:hover {
+    background-color:  #86c200; /* Đặt màu sắc bạn muốn ở đây */
+    color: #fff; /* Màu chữ */
+    /* Các thuộc tính khác nếu cần */
+}
+.custom-input{
+    border: solid 1px ;
+    padding: 10px;
+}
+ /* Tùy chỉnh giao diện cho trường tải ảnh */
+ .custom-file-label::after {
+    content: "Browse"; /* Thay đổi nội dung của nút tải ảnh */
+  }
+
+</style>
+<script>
+    // Hàm để đóng modal
+    function closeModal() {
+      // Chọn modal và gọi phương thức hide() để đóng modal
+      $('#updateProductModal').modal('hide');
+    }
+  </script>

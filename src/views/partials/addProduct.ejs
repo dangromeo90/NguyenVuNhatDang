@@ -1,0 +1,84 @@
+<button type="button" class="btn custom-color mt-3 ml-3" data-toggle="modal" data-target="#addProductModal">
+    Add Product
+</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="addProductModal" tabindex="-1" role="dialog" aria-labelledby="addProductModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="addProductModalLabel">Add New Product</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action="/api/v1/product/add-product" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="productName">Product Name</label>
+                <input type="text" class="form-control custom-input" id="productName" name="name">
+            </div>
+            <div class="form-group">
+                <label for="productName">Brand</label>
+                <input type="text" class="form-control custom-input" id="productName" name="brand">
+            </div>
+            <div class="form-group">
+                <label for="productPrice">Original Price</label>
+                <input type="text" class="form-control custom-input" id="productPrice" name="oldPrice">
+            </div>
+            <div class="form-group">
+                <label for="productPrice">Price</label>
+                <input type="text" class="form-control custom-input" id="productPrice" name="price">
+            </div>
+            <div class="form-group">
+                <label for="productQuantity">Quantity</label>
+                <input type="text" class="form-control custom-input" id="productQuantity" name="stoke">
+            </div>
+            <div class="form-group">
+                <label for="productDescription">Description</label>
+                <input type="text" class="form-control custom-input" id="productDescription" name="description">
+            </div>
+            <div class="form-group">
+                <label for="productImage">Image</label>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="productImage" name="thumbnail" accept="image/*">
+                    
+                    <label class="custom-file-label" for="productImage">Choose file</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Add</button>
+        </form>
+        
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  <style>
+    .custom-color {
+    background-color: #86c200; /* Đặt màu sắc bạn muốn ở đây */
+    color: #fff; /* Màu chữ */
+    /* Các thuộc tính khác nếu cần */
+}
+   .custom-color:hover {
+    background-color:  #86c200; /* Đặt màu sắc bạn muốn ở đây */
+    color: #fff; /* Màu chữ */
+    /* Các thuộc tính khác nếu cần */
+}
+.custom-input{
+    border: solid 1px ;
+    padding: 10px;
+}
+ /* Tùy chỉnh giao diện cho trường tải ảnh */
+ .custom-file-label::after {
+    content: "Browse"; /* Thay đổi nội dung của nút tải ảnh */
+  }
+  #addProductModal{
+    margin-top: -20px;
+  }
+
+</style>
+<!-- Thư viện Sweet Alert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+
